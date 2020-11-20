@@ -1,4 +1,4 @@
-# Engineering Team Template
+# Organize with Note Taker
 
 ## Description
 
