@@ -1,6 +1,6 @@
 //Required modules
 const fs = require("fs");
-const notesData = require("..db/db.json");
+const notesData = require("../db/db.json");
 
 //Routing
 module.exports = function(app) {
@@ -12,6 +12,6 @@ module.exports = function(app) {
 
     //Create new notes
     app.post("/api/notes", function(req, res) {
-        
+
     })
 }
