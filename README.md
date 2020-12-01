@@ -2,7 +2,13 @@
 
 ## Description
 
+This application helps users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
 
+```
+AS A user, I want to be able to write and save notes
+I WANT to be able to delete notes I've written before
+SO THAT I can organize my thoughts and keep track of tasks I need to complete
+```
 
 ## Table of Contents
 
@@ -22,6 +28,10 @@ npm install
 ```
 
 ## Usage
+
+To use this application, first fork and open the repo onto your local machine. Before attempting to use the app, open your terminal and perform a ```npm install``` to get the necessary packages.
+
+Next, type ```node server.js``` into your integrated terminal or command line. This will start the local host server. You will then be able to open ```index.html``` to begin the application and create notes. 
 
 
 
@@ -45,6 +55,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Test
 
+There has not been a test script written for this application yet.
 
 ## Questions
 
