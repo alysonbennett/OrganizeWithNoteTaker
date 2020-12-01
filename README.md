@@ -30,7 +30,9 @@ npm install
 
 ## Usage
 
-To use this application, first fork and open the repo onto your local machine. Before attempting to use the app, open your terminal and perform a ```npm install``` to get the necessary packages.
+IF USING THE HEROKU LINK, you do not have to install anything! Just use the application as shown. 
+
+To use this application from GitHub, first fork and open the repo onto your local machine. Before attempting to use the app, open your terminal and perform a ```npm install``` to get the necessary packages.
 
 Next, type ```node server.js``` into your integrated terminal or command line. This will start the local host server. You will then be able to open ```index.html``` to begin the application and create notes. 
 
@@ -47,6 +49,8 @@ Now you can start adding notes! Give your note a title and some descriptive text
 Anything you add will be saved into the box on the left side of the screen. You can now view your notes by clicking on the title, or delete them by clicking the trash icon. 
 
 ![Display save notes](public/assets/screenShots/newNotes.png)
+
+
 
 
 ## Credits
