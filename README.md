@@ -35,6 +35,19 @@ Next, type ```node server.js``` into your integrated terminal or command line. T
 
 ![index.html](public/assets/screenShots/index.png)
 
+Next, click on the "Get Started" button to start taking notes. This is what you will first see:
+
+![Notes landing page](public/assets/screenShots/notesOpen.png)
+
+Now you can start adding notes! Give your note a title and some descriptive text, then select the save button in the top right corner.
+
+![Adding note](public/assets/screenShots/update.png)
+
+Anything you add will be saved into the box on the left side of the screen. You can now view your notes by clicking on the title, or delete them by clicking the trash icon. 
+
+![Display save notes](public/assets/screenShots/newNotes.png)
+
+
 ## Credits
 
 Alyson Bennett was the sole collaborator on this project. 
