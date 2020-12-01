@@ -20,7 +20,9 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 * [Test](#Test)
 * [Questions](#Questions)
 
- ## Installation
+## Installation
+
+IF USING THE HEROKU LINK, you do not have to install anything! Just use the application as shown. 
 
 To use this application, please first do a npm install in your command line:
 
