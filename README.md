@@ -14,8 +14,9 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 * [Installation](#Installation)
 * [Usage](#Usage)
+* [Credits](#Credits)
 * [License](#License)
-* [Contributors](#Contributors)
+* [Contributing](#Contributing)
 * [Test](#Test)
 * [Questions](#Questions)
 
