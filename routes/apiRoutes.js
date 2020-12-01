@@ -1,37 +1,40 @@
 //Required modules
-// const notesData = require("../db/db.json");
 const fs = require("fs");
 const path = require("path");
-const DB_PATH = path.join(__dirname, '../db/db.json');
 
-// const writeFile = (path, data) => fs.writeFileSync(path, JSON.stringify(data))
-// const readFile = (path, enc) => JSON.parse(fs.readFileSync(path, enc))
-
-// const writeDB = data => writeFile(DB_PATH, data)
-// const readDB = () => readFile(DB_PATH, "utf8")
-
-const __DB__ = "../db/db.json";
 class DB {
-    constructor(dir) {
-        this.dir = path.join(__dirname, dir);
+    constructor() {
+        const __DB__ = "../db/db.json";
+        this.dir = path.join(__dirname, __DB__);
         this.data = this.readDB();
     }
 
-    writeFile(path, data) { fs.writeFileSync(path, JSON.stringify(data)) }
-    readFile(path, enc) { return JSON.parse(fs.readFileSync(path, enc)) }
-
-    writeDB(data) { this.writeFile(this.dir, data) }
-    readDB() { return this.readFile(this.dir, "utf8") }
+    writeDB() {
+        fs.writeFileSync(this.dir, JSON.stringify(this.data))
+    }
+    readDB() {
+        return JSON.parse(fs.readFileSync(this.dir, "utf8")) || []
+    }
 
     add(item) {
-        item.id = 1;
+        if (this.data.length)
+            item.id = this.data[this.data.length - 1].id + 1
+        else
+            item.id = 1
 
         this.data.push(item)
-        this.writeDB(this.data)
+        this.writeDB()
     }
 
     findAll() {
         return this.data
+    }
+
+    deleteById(id) {
+        if (typeof id !== "number" && !isNaN(id))
+            id = parseInt(id);
+        this.data = this.data.filter(n => n.id !== id)
+        this.writeDB()
     }
 }
 
@@ -40,18 +43,18 @@ module.exports = function (app) {
 
     //API GET Request, displays all notes
     app.get("/api/notes", function (req, res) {
-        // const notesData = readDB();
-
-        res.json(new DB(__DB__).findAll());
+        res.json(new DB().findAll());
     });
 
     //Create new notes
     app.post("/api/notes", function (req, res) {
-        // const notesData = readDB();
-        // notesData.push(req.body);
-        // writeDB(notesData);
+        new DB().add(req.body)
 
-        new DB(__DB__).add(req.body)
+        res.sendStatus(200);
+    })
+
+    app.delete("/api/notes/:id", function (req, res) {
+        new DB().deleteById(req.params.id)
 
         res.sendStatus(200);
     })
