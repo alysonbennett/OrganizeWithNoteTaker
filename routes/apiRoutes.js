@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 
-//Build class for DB and define functions
+//Build class for DB to use constructor
 class DB {
     constructor() {
         const __DB__ = "../db/db.json";
@@ -10,13 +10,17 @@ class DB {
         this.data = this.readDB();
     }
 
+    //Function to write notes to db
     writeDB() {
         fs.writeFileSync(this.dir, JSON.stringify(this.data))
     }
+
+    //Function to read notes in DB
     readDB() {
         return JSON.parse(fs.readFileSync(this.dir, "utf8")) || []
     }
 
+    //Function to add notes to db
     add(item) {
         if (this.data.length)
             item.id = this.data[this.data.length - 1].id + 1
@@ -27,10 +31,12 @@ class DB {
         this.writeDB()
     }
 
+    //Function to display notes
     findAll() {
         return this.data
     }
 
+    //Function to delete notes
     deleteById(id) {
         if (typeof id !== "number" && !isNaN(id))
             id = parseInt(id);
