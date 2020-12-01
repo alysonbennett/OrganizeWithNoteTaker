@@ -33,7 +33,7 @@ To use this application, first fork and open the repo onto your local machine. B
 
 Next, type ```node server.js``` into your integrated terminal or command line. This will start the local host server. You will then be able to open ```index.html``` to begin the application and create notes. 
 
-
+![index.html](public/assets/screenShots/index.png)
 
 ## Credits
 
