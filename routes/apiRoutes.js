@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 
+//Build class for DB and define functions
 class DB {
     constructor() {
         const __DB__ = "../db/db.json";
@@ -53,6 +54,7 @@ module.exports = function (app) {
         res.sendStatus(200);
     })
 
+    //Delete note by ID
     app.delete("/api/notes/:id", function (req, res) {
         new DB().deleteById(req.params.id)
 
